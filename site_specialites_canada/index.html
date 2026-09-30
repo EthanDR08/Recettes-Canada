@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Les spécialités locales du Canada : recettes, patrimoine et vidéos.">
+<title>Les spécialités locales du Canada</title>
+<style>
+:root{--red:#d92716;--dark:#a9160b;--cream:#fff8ed;--ink:#251714;--shadow:0 18px 50px rgba(61,17,12,.18)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,sans-serif}
+.hero{min-height:72vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;color:#fff;background:linear-gradient(145deg,var(--dark),var(--red))}
+.hero:after{content:"🍁";position:absolute;font-size:30rem;right:-4rem;bottom:-7rem;opacity:.08;transform:rotate(-12deg)}
+.nav{position:absolute;top:0;left:0;right:0;z-index:2;padding:22px 5vw;display:flex;justify-content:space-between;font-weight:700}
+.nav a{color:#fff;text-decoration:none}.hero-content{position:relative;z-index:1;max-width:900px;padding:90px 24px 70px}
+.eyebrow{margin:0 0 10px;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:700}
+h1,h2,h3{font-family:Georgia,serif}h1{font-size:clamp(3rem,8vw,7rem);line-height:.95;margin:0 0 25px}
+.hero p:not(.eyebrow){font-size:1.15rem;line-height:1.7;max-width:720px;margin:0 auto 30px}
+.button{display:inline-block;background:#fff;color:var(--dark);padding:14px 24px;border-radius:999px;text-decoration:none;font-weight:700}
+main{max-width:1200px;margin:auto;padding:80px 24px}.intro{max-width:780px;text-align:center;margin:0 auto 60px}
+.intro h2{font-size:clamp(2.2rem,5vw,4rem);margin:0 0 15px}.intro p:last-child{line-height:1.8}
+.section-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px}.section-title h2{margin:0;font-size:2.8rem}
+.recipe-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);transition:.25s}
+.card:hover{transform:translateY(-6px)}.card-image{height:240px;overflow:hidden}.card-image img{width:100%;height:100%;object-fit:cover}
+.card-body{padding:24px}.card h3{margin:0 0 10px;font-size:2rem}.card p:not(.eyebrow){line-height:1.65;min-height:78px}
+.open{border:0;cursor:pointer;background:var(--red);color:#fff;border-radius:999px;padding:12px 18px;font-weight:700;font-size:1rem}
+footer{background:#241512;color:#fff;padding:35px 24px;text-align:center}footer p{margin:5px;opacity:.85}
+.modal{position:fixed;inset:0;z-index:10;display:none;padding:30px;align-items:center;justify-content:center}.modal.show{display:flex}
+.backdrop{position:absolute;inset:0;background:rgba(20,8,6,.72);backdrop-filter:blur(4px)}.dialog{position:relative;z-index:1;background:#fff;width:min(950px,100%);max-height:90vh;overflow:auto;border-radius:25px;box-shadow:0 30px 100px #0006}
+.dialog-inner{padding:34px}.close{position:absolute;right:18px;top:15px;border:0;background:#fff;font-size:2rem;cursor:pointer;width:44px;height:44px;border-radius:50%}
+.modal h2{font-size:3rem;margin:0 45px 8px 0}.modal-intro{line-height:1.7}.columns{display:grid;grid-template-columns:1fr 1.35fr;gap:32px;margin-top:25px}
+.ingredients{background:#fff5ee;padding:22px;border-radius:18px}.ingredients h3,.method h3{margin-top:0}
+.ingredients li,.method li{margin:10px 0;line-height:1.5}.video{margin-top:28px}.video iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:16px}
+.source{display:inline-block;margin-top:16px;color:var(--dark);font-weight:700}
+@media(max-width:850px){.recipe-grid{grid-template-columns:1fr 1fr}.columns{grid-template-columns:1fr}}
+@media(max-width:560px){.recipe-grid{grid-template-columns:1fr}.section-title{display:block}.modal{padding:12px}.dialog-inner{padding:25px 18px}.modal h2{font-size:2.35rem}}
+</style></head>
+<body>
+<header class="hero" id="accueil"><nav class="nav"><div>🍁 Saveurs du Canada</div><a href="#specialites">Les spécialités</a></nav>
+<div class="hero-content"><p class="eyebrow">Cuisine & patrimoine</p><h1>Les spécialités locales du Canada</h1>
+<p>Découvrez six spécialités canadiennes et québécoises à travers leur histoire, une recette écrite et une vidéo.</p>
+<a class="button" href="#specialites">Découvrir</a></div></header>
+<main><section class="intro"><p class="eyebrow">Du Québec aux traditions de l’Ouest</p>
+<h2>Des recettes qui racontent le Canada</h2><p>Chaque carte présente le plat ou le produit, les ingrédients essentiels, les étapes de préparation et une vidéo.</p></section>
+<section id="specialites"><div class="section-title"><div><p class="eyebrow">Au menu</p><h2>Les spécialités locales</h2></div><span>6 découvertes 🇨🇦</span></div>
+<div class="recipe-grid"><article class="card">
+      <div class="card-image"><img src="images/bannock.jpg" alt="Bannock"></div>
+      <div class="card-body"><p class="eyebrow">Tradition autochtone & métisse</p><h3>Bannock</h3>
+      <p>Un pain traditionnel très présent dans différentes régions du Canada, avec de nombreuses variantes familiales.</p><button class="open" data-open="bannock">Voir la recette</button></div>
+    </article><article class="card">
+      <div class="card-image"><img src="images/poutine.jpg" alt="Poutine"></div>
+      <div class="card-body"><p class="eyebrow">Grand classique du Québec</p><h3>Poutine</h3>
+      <p>Des frites croustillantes, du fromage en grains et une sauce chaude : un incontournable de la cuisine québécoise.</p><button class="open" data-open="poutine">Voir la recette</button></div>
+    </article><article class="card">
+      <div class="card-image"><img src="images/sandwich.jpg" alt="Smoked Meat de Montréal"></div>
+      <div class="card-body"><p class="eyebrow">Spécialité montréalaise</p><h3>Smoked Meat de Montréal</h3>
+      <p>De fines tranches de bœuf fumé servies dans un pain de seigle, généralement avec de la moutarde jaune.</p><button class="open" data-open="smoked">Voir la recette</button></div>
+    </article><article class="card">
+      <div class="card-image"><img src="images/butter-tarts.jpg" alt="Tartelettes au beurre"></div>
+      <div class="card-body"><p class="eyebrow">Dessert canadien</p><h3>Tartelettes au beurre</h3>
+      <p>De petites tartelettes garnies d’une préparation riche, beurrée et caramélisée, emblématiques de la pâtisserie canadienne.</p><button class="open" data-open="butter">Voir la recette</button></div>
+    </article><article class="card">
+      <div class="card-image"><img src="images/maple-syrup.jpg" alt="Sirop d’érable"></div>
+      <div class="card-body"><p class="eyebrow">Symbole du Canada</p><h3>Sirop d’érable</h3>
+      <p>Produit à partir de la sève des érables, le sirop d’érable est particulièrement associé au Québec et à la saison des sucres.</p><button class="open" data-open="maple">Voir la recette</button></div>
+    </article><article class="card">
+      <div class="card-image"><img src="images/bagels.jpg" alt="Bagels de Montréal"></div>
+      <div class="card-body"><p class="eyebrow">Spécialité montréalaise</p><h3>Bagels de Montréal</h3>
+      <p>Plus fins et souvent plus sucrés que leurs cousins new-yorkais, les bagels montréalais sont bouillis dans une eau au miel avant cuisson.</p><button class="open" data-open="bagels">Voir la recette</button></div>
+    </article></div></section></main>
+<footer><p>Présentation des spécialités canadiennes • Projet scolaire</p><p>Recettes et vidéos : sources indiquées dans chaque fiche.</p></footer>
+<div class="modal" id="modal" aria-hidden="true"><div class="backdrop" id="backdrop"></div><div class="dialog" role="dialog" aria-modal="true">
+<button class="close" id="close" aria-label="Fermer">×</button><div class="dialog-inner" id="modalBody"></div></div></div>
+<script>
+const recipes=[{"id": "bannock", "name": "Bannock", "tag": "Tradition autochtone & métisse", "image": "bannock.jpg", "intro": "Un pain traditionnel très présent dans différentes régions du Canada, avec de nombreuses variantes familiales.", "ingredients": ["460 g de farine", "15 g de levure chimique", "45 ml d’huile", "250 ml d’eau froide"], "steps": ["Mélanger la farine, la levure chimique et l’huile.", "Ajouter l’eau froide puis pétrir jusqu’à obtenir une pâte homogène.", "Former une boule et la couvrir pendant 10 minutes.", "Aplatir la pâte dans une poêle en fonte chaude et cuire environ 15 minutes, jusqu’à ce qu’elle soit dorée.", "Servir chaud avec une confiture ou des petits fruits."], "video": "https://www.youtube.com/watch?v=WIMCvfLjcd8", "videoTitle": "Bannock Recipe & Instructions", "source": "https://parks.canada.ca/culture/gourmand-gourmet/recette-recipe66"}, {"id": "poutine", "name": "Poutine", "tag": "Grand classique du Québec", "image": "poutine.jpg", "intro": "Des frites croustillantes, du fromage en grains et une sauce chaude : un incontournable de la cuisine québécoise.", "ingredients": ["1 kg de pommes de terre", "Huile de friture", "225 à 250 g de fromage en grains", "60 g de beurre", "35 g de farine", "840 ml de bouillon de bœuf", "1 c. à soupe de sauce Worcestershire", "Sel et poivre"], "steps": ["Couper les pommes de terre en frites, les rincer et les laisser tremper environ 30 minutes.", "Faire une première cuisson à 135–150 °C jusqu’à ce qu’elles soient tendres sans être dorées.", "Faire fondre le beurre, ajouter la farine puis incorporer progressivement le bouillon en fouettant.", "Ajouter la sauce Worcestershire, saler et poivrer, puis laisser épaissir.", "Faire une seconde cuisson des frites à environ 200 °C jusqu’à ce qu’elles soient dorées.", "Déposer les frites, ajouter le fromage en grains puis verser la sauce très chaude."], "video": "https://www.youtube.com/watch?v=sppGyMuky5I", "videoTitle": "Poutine Recipe | How to Make Classic Canadian Poutine", "source": "https://www.lcbo.com/fr/recipe/smoked-meat-poutine/F202600007"}, {"id": "smoked", "name": "Smoked Meat de Montréal", "tag": "Spécialité montréalaise", "image": "sandwich.jpg", "intro": "De fines tranches de bœuf fumé servies dans un pain de seigle, généralement avec de la moutarde jaune.", "ingredients": ["Pain de seigle", "Tranches de smoked meat de Montréal", "Moutarde jaune", "Cornichons, pour accompagner"], "steps": ["Faire chauffer doucement les tranches de smoked meat à la vapeur ou dans une poêle couverte avec un petit fond d’eau.", "Toaster légèrement le pain de seigle si désiré.", "Déposer une généreuse quantité de viande entre les tranches de pain.", "Ajouter la moutarde jaune et servir avec un cornichon.", "La fabrication traditionnelle de la viande elle-même implique une salaison, un fumage puis une cuisson à la vapeur ; pour une préparation maison simple, utiliser du smoked meat déjà préparé."], "video": "https://www.youtube.com/watch?v=ZI_NIEJhcWs", "videoTitle": "Montreal Smoked Meat — Glen & Friends", "source": "https://www.roxetpoh.ca/boeuf/smoked-meat-de-montr%C3%A9al"}, {"id": "butter", "name": "Tartelettes au beurre", "tag": "Dessert canadien", "image": "butter-tarts.jpg", "intro": "De petites tartelettes garnies d’une préparation riche, beurrée et caramélisée, emblématiques de la pâtisserie canadienne.", "ingredients": ["Pâte brisée ou pâte à tarte", "240 ml de sirop d’érable", "115 g de cassonade", "57 g de beurre", "2 œufs", "1 c. à café de vanille", "1/2 c. à café de sel"], "steps": ["Préparer et foncer les petits moules avec la pâte.", "Mélanger le sirop d’érable, la cassonade et le beurre fondu refroidi.", "Ajouter les œufs, la vanille et le sel sans trop fouetter.", "Répartir la garniture dans les fonds de tarte, sans les remplir complètement.", "Cuire à environ 200 °C pendant 20 à 25 minutes, jusqu’à ce que les bords soient pris et le centre encore légèrement tremblotant.", "Laisser refroidir avant de démouler."], "video": "https://www.youtube.com/watch?v=DfOhFSp6BsA", "videoTitle": "Gooey Canadian Butter Tarts Recipe", "source": "https://www.biggerbolderbaking.com/canadian-butter-tarts-recipe/"}, {"id": "maple", "name": "Sirop d’érable", "tag": "Symbole du Canada", "image": "maple-syrup.jpg", "intro": "Produit à partir de la sève des érables, le sirop d’érable est particulièrement associé au Québec et à la saison des sucres.", "ingredients": ["Sève d’érable", "Chaleur pour l’évaporation", "Filtration du sirop"], "steps": ["Récolter la sève d’érable pendant la période de coulée printanière.", "Faire évaporer une grande partie de l’eau pour concentrer les sucres.", "Poursuivre l’évaporation jusqu’à obtenir le sirop à la bonne concentration.", "Filtrer le sirop puis le conditionner.", "À la maison, découvrir le produit sur des pancakes, des crêpes, du pain perdu ou des desserts."], "video": "https://www.youtube.com/watch?v=fpl7DbCMAz0", "videoTitle": "Maple syrup production — Érable du Québec", "source": "https://www.erableduquebec.ca/"}, {"id": "bagels", "name": "Bagels de Montréal", "tag": "Spécialité montréalaise", "image": "bagels.jpg", "intro": "Plus fins et souvent plus sucrés que leurs cousins new-yorkais, les bagels montréalais sont bouillis dans une eau au miel avant cuisson.", "ingredients": ["415 g d’eau tiède", "7 g de levure sèche", "50 g de sucre", "700 g de farine", "6 g de sel", "30 ml d’huile d’olive", "Miel", "Graines de sésame ou de pavot"], "steps": ["Dissoudre la levure et le sucre dans l’eau tiède puis laisser s’activer quelques minutes.", "Ajouter la farine, le sel et l’huile, puis pétrir 8 à 10 minutes.", "Laisser lever environ 1 heure, jusqu’à ce que la pâte double de volume.", "Diviser en 12 morceaux, former les bagels et les laisser reposer.", "Les pocher environ 45 secondes de chaque côté dans une eau frémissante additionnée de miel.", "Ajouter les graines puis cuire environ 16 minutes à 230 °C."], "video": "https://www.youtube.com/watch?v=FkvuI0Xx0CY", "videoTitle": "MONTREAL STYLE BAGELS — Easy Recipe and Instructions", "source": "https://urbanfarmandkitchen.com/homemade-montreal-style-bagel-recipe/comment-page-4/"}];
+const modal=document.getElementById('modal'),body=document.getElementById('modalBody');
+function openRecipe(id){const r=recipes.find(x=>x.id===id);if(!r)return;body.innerHTML=`
+<p class="eyebrow">${r.tag}</p><h2>${r.name}</h2><p class="modal-intro">${r.intro}</p>
+<div class="columns"><div class="ingredients"><h3>Ingrédients</h3><ul>${r.ingredients.map(i=>`<li>${i}</li>`).join('')}</ul></div>
+<div class="method"><h3>Préparation</h3><ol>${r.steps.map(s=>`<li>${s}</li>`).join('')}</ol></div></div>
+<div class="video"><h3>🎥 Vidéo</h3><iframe src="${r.video.replace('watch?v=','embed/')}" title="${r.videoTitle}" allowfullscreen></iframe></div>
+<a class="source" href="${r.source}" target="_blank" rel="noopener">Voir la recette / source</a>`;
+modal.classList.add('show');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+function closeRecipe(){modal.classList.remove('show');modal.setAttribute('aria-hidden','true');body.innerHTML='';document.body.style.overflow=''}
+document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>openRecipe(b.dataset.open)));
+document.getElementById('close').addEventListener('click',closeRecipe);document.getElementById('backdrop').addEventListener('click',closeRecipe);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeRecipe()});
+</script></body></html>
